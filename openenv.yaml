@@ -7,7 +7,7 @@ description: >
   dense partial reward signals for RL training.
 action_class: models.SupportAction
 observation_class: models.SupportObservation
-base_url: "https://shubhamkumar-customer-support-gym.hf.space"
+base_url: "https://Shubham85-customer-support-gym.hf.space"
 is_concurrent: true
 tasks:
   - id: easy_refund
