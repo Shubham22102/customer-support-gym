@@ -1,3 +1,12 @@
+---
+title: Customer Support Resolution Gym
+emoji: 🎧
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+pinned: false
+---
+
 # Customer Support Resolution Gym
 
 An OpenEnv environment for training and evaluating RL agents on complex, multi-step customer support tasks via policy compliance and database interactions.
