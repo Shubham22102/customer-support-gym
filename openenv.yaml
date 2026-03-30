@@ -1,0 +1,30 @@
+name: customer-support-resolution-gym
+version: 0.1.0
+description: >
+  Multi-turn, tool-using customer support agent environment.
+  An agent resolves e-commerce support tickets by calling structured
+  tools across 5-20 step episodes. Three difficulty levels with
+  dense partial reward signals for RL training.
+action_class: models.SupportAction
+observation_class: models.SupportObservation
+base_url: "https://shubhamkumar-customer-support-gym.hf.space"
+is_concurrent: true
+tasks:
+  - id: easy_refund
+    difficulty: easy
+    max_steps: 8
+    description: "Straightforward wrong-item refund. Optimal path is 4 steps."
+  - id: billing_dispute
+    difficulty: medium
+    max_steps: 14
+    description: "Partial refund for duplicate charge. Requires investigation."
+  - id: multi_issue
+    difficulty: hard
+    max_steps: 25
+    description: "Three simultaneous issues. Mandatory fraud escalation required."
+tags:
+  - customer-support
+  - tool-use
+  - multi-turn
+  - agentic
+  - rl-training

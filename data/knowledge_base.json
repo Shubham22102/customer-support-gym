@@ -1,0 +1,151 @@
+{
+  "articles": [
+    {
+      "article_id": "KB-0001",
+      "title": "How to Process a Return and Refund for a Wrong or Incorrect Item",
+      "category": "returns",
+      "content": "When a customer receives a wrong or incorrect item, follow these steps to process a return and refund.\n\nFirst, use the search_orders tool to look up the order and verify the delivery status. Check the delivery date against the policy return window.\n\nSince this is an error on our end, issue a full refund using the issue_refund tool with the correct refund_type. Ensure that the associated ticket is closed with the correct resolution once the refund is completed.",
+      "related_policy_ids": [
+        "POL-REFUND-001",
+        "POL-REFUND-002",
+        "POL-REFUND-003"
+      ]
+    },
+    {
+      "article_id": "KB-0002",
+      "title": "Identifying and Resolving Duplicate or Erroneous Billing Charges",
+      "category": "billing",
+      "content": "When handling a ticket for duplicate or erroneous billing charges, extreme care must be taken to ensure we do not issue refunds for legitimate charges.\n\n1. Lookup both orders mentioned by the customer using search_orders.\n2. Do NOT issue a refund immediately until you have verified which charge is the duplicate.\n3. Check the fraud flag on the user account and orders.\n4. Once verified, issue a partial refund on the duplicate order only, using issue_refund. Close the ticket accordingly.",
+      "related_policy_ids": [
+        "POL-REFUND-001",
+        "POL-FRAUD-001",
+        "POL-FRAUD-002"
+      ]
+    },
+    {
+      "article_id": "KB-0003",
+      "title": "Account Unlock and Identity Verification Procedure",
+      "category": "account",
+      "content": "For customers requesting their disabled or locked account to be unlocked, strict verification MUST be followed.\n\n1. You MUST call the request_info tool with info_type=account_details first. Do not proceed until you receive a response containing the customer's verification details.\n2. Wait for the customer to reply.\n3. Once verified, close the ticket with the account_unlocked resolution.\n\nNote: If the account was suspended due to serious Terms of Service violations, you must escalate the ticket to a manager instead.",
+      "related_policy_ids": [
+        "POL-ACCT-001"
+      ]
+    },
+    {
+      "article_id": "KB-0004",
+      "title": "Handling Late Deliveries and Tracking Not Updated",
+      "category": "shipping",
+      "content": "When a customer reports a late delivery or tracking that hasn't updated:\n\n1. Use search_orders to lookup the order tracking details.\n2. Check the number of days past the expected delivery date.\n3. Depending on the delay duration (refer to policy for specific days), offer the customer a refund or a replacement order.\n4. Use the appropriate resolution type once the customer has agreed to an option.",
+      "related_policy_ids": [
+        "POL-SHIP-001",
+        "POL-SHIP-002"
+      ]
+    },
+    {
+      "article_id": "KB-0005",
+      "title": "Processing Lost in Transit Claims",
+      "category": "shipping",
+      "content": "Lost in transit claims require verification from the carrier tracking status.\n\n1. Use search_orders to verify the shipping status is marked as 'lost_in_transit'.\n2. You must offer the customer a choice between a replacement or a full refund.\n3. Do not close the ticket without explicitly offering both options to the customer.\n4. Process their choice accordingly using issue_refund or by organizing a replacement.",
+      "related_policy_ids": [
+        "POL-SHIP-001",
+        "POL-SHIP-002"
+      ]
+    },
+    {
+      "article_id": "KB-0006",
+      "title": "Resolving Promotional Code Not Applied to Order",
+      "category": "billing",
+      "content": "If a customer forgot to apply a valid promotional code or it failed to apply during checkout:\n\n1. Verify the promo amount (the difference between the full price paid and the discounted price with the promo).\n2. Use the issue_refund tool to issue a partial refund for the discount amount only.\n3. Close the ticket with the partial_refund_issued resolution.",
+      "related_policy_ids": [
+        "POL-REFUND-001"
+      ]
+    },
+    {
+      "article_id": "KB-0007",
+      "title": "Handling Password Reset and Login Issues",
+      "category": "account",
+      "content": "For basic login issues and password resets:\n\n1. Check the account_status to see if it is 'active' or 'locked'.\n2. For active accounts, provide information on how to use the self-service password reset link on the login page.\n3. For locked accounts, you must follow the formal account unlock procedure with identity verification before providing access.",
+      "related_policy_ids": [
+        "POL-ACCT-001"
+      ]
+    },
+    {
+      "article_id": "KB-0008",
+      "title": "Responding to Cancelled Subscription Still Being Charged",
+      "category": "billing",
+      "content": "If a customer is charged for a subscription after they have cancelled it:\n\n1. Lookup the post-cancellation charge order.\n2. Verify that it has status=completed and that the charge occurred after the official cancellation date of the subscription.\n3. Use issue_refund to issue a partial refund for the post-cancellation amount.\n4. Close the ticket with the partial_refund_issued resolution.",
+      "related_policy_ids": [
+        "POL-REFUND-001"
+      ]
+    },
+    {
+      "article_id": "KB-0009",
+      "title": "Defective or Damaged Item Resolution Procedure",
+      "category": "products",
+      "content": "For reports of defective or damaged items received by the customer:\n\n1. Use search_orders to verify the delivery date and check if it falls within the acceptable return window for defects.\n2. For defective items within the window, use issue_refund to issue a full refund.\n3. Note: Do not require the customer to ship back defective or damaged items. Dispose of them safely.",
+      "related_policy_ids": [
+        "POL-REFUND-001",
+        "POL-REFUND-002"
+      ]
+    },
+    {
+      "article_id": "KB-0010",
+      "title": "Wrong Size or Colour Received — Resolution Guide",
+      "category": "products",
+      "content": "When a customer receives items in a wrong size or colour compared to their order invoice:\n\n1. Acknowledge that this is a ShopEasy fulfilment error.\n2. A full refund applies as long as the request is within the standard return window.\n3. There is no need to request photo evidence from the customer for this issue.\n4. Do not escalate these tickets, just process the full refund using issue_refund.",
+      "related_policy_ids": [
+        "POL-REFUND-001"
+      ]
+    },
+    {
+      "article_id": "KB-0011",
+      "title": "Handling Overcharged Orders — Billing System Errors",
+      "category": "billing",
+      "content": "If a system error results in a customer being overcharged for an order:\n\n1. Lookup the order using search_orders and examine the billing history.\n2. Identify the exact overcharge amount (the difference between what was actually charged and the correct listed price of the items).\n3. Use issue_refund to issue a partial refund for the overcharge only.\n4. Close the ticket with the partial_refund_issued resolution.",
+      "related_policy_ids": [
+        "POL-REFUND-001",
+        "POL-FRAUD-001"
+      ]
+    },
+    {
+      "article_id": "KB-0012",
+      "title": "Wrong Delivery Address — Carrier Delivered to Wrong Location",
+      "category": "shipping",
+      "content": "When a carrier delivers an order to the wrong address:\n\n1. Verify the shipping address entered in the order versus the customer's correct address.\n2. If the error was due to ShopEasy or the carrier (ShopEasy's error), issue a full refund.\n3. If it is ambiguous whether it is a customer error (e.g., entered incorrect zip code), offer partial compensation.\n4. Do not escalate to fraud unless specific suspicious patterns are suspected.",
+      "related_policy_ids": [
+        "POL-SHIP-001",
+        "POL-REFUND-001"
+      ]
+    },
+    {
+      "article_id": "KB-0013",
+      "title": "Escalating Potential Fraud and Unauthorized Transactions",
+      "category": "account",
+      "content": "When a customer reports an unauthorized transaction or fraud is suspected:\n\n1. NEVER issue a refund on orders that are flagged for potential fraud directly.\n2. ALWAYS use the escalation tool to escalate the ticket to the fraud_investigation team first.\n3. Close the initial ticket with the escalated resolution.\n4. Inform the customer that their case is being reviewed and their card will be protected.",
+      "related_policy_ids": [
+        "POL-FRAUD-001",
+        "POL-FRAUD-002"
+      ]
+    },
+    {
+      "article_id": "KB-0014",
+      "title": "Handling Refund Not Yet Received by Customer",
+      "category": "returns",
+      "content": "If a customer asks where their refund is after it was allegedly processed:\n\n1. Use search_orders to check the order status and verify if a refund record actually exists in the system.\n2. If a refund was already processed successfully, inform the customer that bank processing times can take up to 5 business days.\n3. Do NOT issue a second refund.\n4. Close the ticket with the information_provided resolution.",
+      "related_policy_ids": [
+        "POL-REFUND-001"
+      ]
+    },
+    {
+      "article_id": "KB-0015",
+      "title": "Multi-Issue Tickets — Handling Multiple Problems in One Ticket",
+      "category": "billing",
+      "content": "Customers often submit tickets encompassing multiple distinct issues:\n\n1. Decompose the single ticket into individual logical issues.\n2. Resolve each separately in a strictly logical order (address fraud/account security first, then address billing concerns, and finally tackle shipping issues).\n3. Use the multiple_resolutions resolution type when closing.\n4. Ensure you include all resolved issues and actions taken in the final summary to the customer.",
+      "related_policy_ids": [
+        "POL-FRAUD-001",
+        "POL-ACCT-001",
+        "POL-SHIP-001"
+      ]
+    }
+  ]
+}

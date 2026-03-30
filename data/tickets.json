@@ -1,0 +1,1551 @@
+{
+  "tickets": [
+
+    {
+      "ticket_id": "TKT-ER0001",
+      "task_id": "easy_refund",
+      "difficulty": "easy",
+      "max_steps": 8,
+      "optimal_steps": 4,
+      "category": "product",
+      "issue_types": ["wrong_item_received"],
+      "opening_message": "Hi, I placed an order two weeks ago for a pair of Sony WH-1000XM5 noise-cancelling headphones in black, but what arrived in the box was a completely different product — a generic Bluetooth speaker I never ordered. The box is still sealed except for when I opened it to check. I'm really frustrated, this was a birthday gift. Can you please sort this out ASAP? My order number is ORD-482910.",
+      "ground_truth_resolution": "refund_issued",
+      "applicable_policy_ids": ["POL-REFUND-001", "POL-SHIP-001"],
+      "customer_id": "CUST-00142",
+      "order_ids": ["ORD-482910"],
+      "fraud_flag": false,
+      "customer_replies": {
+        "order_id": "Yes, my order number is ORD-482910.",
+        "transaction_id": "I'm not sure what transaction ID you mean. The order is ORD-482910.",
+        "photo_evidence": "I don't have a photo right now but I can take one. Is that really necessary? I clearly got the wrong thing.",
+        "account_details": "My email is maya.r@email.com and my name is Maya Rodriguez.",
+        "other": "I'm not sure what else you need — I received the wrong item, that's it."
+      },
+      "trap_actions": ["escalate", "close_ticket:replacement_shipped"],
+      "db_seed": {
+        "customers": [
+          {
+            "customer_id": "CUST-00142",
+            "name": "Maya Rodriguez",
+            "email": "maya.r@email.com",
+            "account_status": "active",
+            "loyalty_tier": "silver",
+            "total_lifetime_spend": 847.50,
+            "open_disputes": 0,
+            "order_history": ["ORD-482910", "ORD-391045", "ORD-300812"]
+          }
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-482910",
+            "customer_id": "CUST-00142",
+            "status": "delivered",
+            "total_amount": 349.99,
+            "payment_method": "credit_card",
+            "created_at": "2026-03-10T14:22:00Z",
+            "shipped_at": "2026-03-12T09:15:00Z",
+            "delivered_at": "2026-03-14T16:45:00Z",
+            "tracking_number": "1Z999AA10123456784",
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "42 Maple Avenue",
+              "city": "Austin",
+              "state": "TX",
+              "zip": "78701",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-WH1000",
+                "name": "Sony WH-1000XM5 Wireless Noise-Cancelling Headphones (Black)",
+                "quantity": 1,
+                "unit_price": 349.99
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "sku": "SKU-WH1000",
+            "name": "Sony WH-1000XM5 Wireless Noise-Cancelling Headphones (Black)",
+            "category": "electronics",
+            "price": 349.99,
+            "weight_kg": 0.25
+          }
+        ]
+      }
+    },
+
+    {
+      "ticket_id": "TKT-ER0002",
+      "task_id": "easy_refund",
+      "difficulty": "easy",
+      "max_steps": 8,
+      "optimal_steps": 4,
+      "category": "product",
+      "issue_types": ["defective_item"],
+      "opening_message": "Hello, I received my order ORD-503210 for a KitchenPro hand blender last week and it stopped working after one use. The motor just cut out completely and now it won't turn on at all. It arrived on March 20th so it's only been 8 days. I paid $79.99 for it and I'd like a full refund. I still have the original box and all accessories.",
+      "ground_truth_resolution": "refund_issued",
+      "applicable_policy_ids": ["POL-REFUND-001"],
+      "customer_id": "CUST-00389",
+      "order_ids": ["ORD-503210"],
+      "fraud_flag": false,
+      "customer_replies": {
+        "order_id": "Yes it's ORD-503210.",
+        "photo_evidence": "Sure, I can take a photo. Here it is — shows the unit with the power button and the blender not spinning.",
+        "account_details": "Name is Daniel Park, email d.park@homemail.com.",
+        "other": "I just want a refund. I don't want a replacement of the same broken product."
+      },
+      "trap_actions": ["escalate", "close_ticket:replacement_shipped"],
+      "db_seed": {
+        "customers": [
+          {
+            "customer_id": "CUST-00389",
+            "name": "Daniel Park",
+            "email": "d.park@homemail.com",
+            "account_status": "active",
+            "loyalty_tier": "standard",
+            "total_lifetime_spend": 234.80,
+            "open_disputes": 0,
+            "order_history": ["ORD-503210", "ORD-441200"]
+          }
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-503210",
+            "customer_id": "CUST-00389",
+            "status": "delivered",
+            "total_amount": 79.99,
+            "payment_method": "debit_card",
+            "created_at": "2026-03-17T11:00:00Z",
+            "shipped_at": "2026-03-18T13:00:00Z",
+            "delivered_at": "2026-03-20T10:30:00Z",
+            "tracking_number": "1Z999AA10199887654",
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "17 Pine Street",
+              "city": "Denver",
+              "state": "CO",
+              "zip": "80201",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-BLND5",
+                "name": "KitchenPro Hand Blender 5-Speed (White)",
+                "quantity": 1,
+                "unit_price": 79.99
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "sku": "SKU-BLND5",
+            "name": "KitchenPro Hand Blender 5-Speed (White)",
+            "category": "home_goods",
+            "price": 79.99,
+            "weight_kg": 0.85
+          }
+        ]
+      }
+    },
+
+    {
+      "ticket_id": "TKT-ER0003",
+      "task_id": "easy_refund",
+      "difficulty": "easy",
+      "max_steps": 8,
+      "optimal_steps": 4,
+      "category": "product",
+      "issue_types": ["missing_parts"],
+      "opening_message": "Hi there, I ordered a desk lamp (ORD-499100) and it arrived yesterday but it's missing the power adapter. Without the adapter the lamp is completely useless. It's a $45 lamp and I need all the parts to use it. Can I get a refund?",
+      "ground_truth_resolution": "refund_issued",
+      "applicable_policy_ids": ["POL-REFUND-001"],
+      "customer_id": "CUST-00561",
+      "order_ids": ["ORD-499100"],
+      "fraud_flag": false,
+      "customer_replies": {
+        "order_id": "Yes the order number is ORD-499100, it arrived yesterday March 27th.",
+        "photo_evidence": "I can take a photo of the box contents showing no adapter included.",
+        "account_details": "Sophie Turner, sophie.t@quickmail.com",
+        "other": "Just a refund please. I'll buy a different lamp elsewhere."
+      },
+      "trap_actions": ["escalate", "close_ticket:replacement_shipped"],
+      "db_seed": {
+        "customers": [
+          {
+            "customer_id": "CUST-00561",
+            "name": "Sophie Turner",
+            "email": "sophie.t@quickmail.com",
+            "account_status": "active",
+            "loyalty_tier": "standard",
+            "total_lifetime_spend": 128.50,
+            "open_disputes": 0,
+            "order_history": ["ORD-499100"]
+          }
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-499100",
+            "customer_id": "CUST-00561",
+            "status": "delivered",
+            "total_amount": 44.99,
+            "payment_method": "paypal",
+            "created_at": "2026-03-23T09:00:00Z",
+            "shipped_at": "2026-03-24T11:00:00Z",
+            "delivered_at": "2026-03-27T15:00:00Z",
+            "tracking_number": "1Z999AA10198000001",
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "9 Birch Lane",
+              "city": "Portland",
+              "state": "OR",
+              "zip": "97201",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-LAMP3",
+                "name": "ArcLight Adjustable Desk Lamp (Black)",
+                "quantity": 1,
+                "unit_price": 44.99
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "sku": "SKU-LAMP3",
+            "name": "ArcLight Adjustable Desk Lamp (Black)",
+            "category": "home_goods",
+            "price": 44.99,
+            "weight_kg": 0.60
+          }
+        ]
+      }
+    },
+
+    {
+      "ticket_id": "TKT-ER0004",
+      "task_id": "easy_refund",
+      "difficulty": "easy",
+      "max_steps": 8,
+      "optimal_steps": 4,
+      "category": "product",
+      "issue_types": ["wrong_size"],
+      "opening_message": "I ordered a medium-sized running jacket (ORD-511720) but received a small. I'm a medium and the small doesn't fit at all. It was delivered 5 days ago. I'd like a full refund — $95.00. I haven't worn it, it just doesn't fit.",
+      "ground_truth_resolution": "refund_issued",
+      "applicable_policy_ids": ["POL-REFUND-001"],
+      "customer_id": "CUST-00722",
+      "order_ids": ["ORD-511720"],
+      "fraud_flag": false,
+      "customer_replies": {
+        "order_id": "Yes it's ORD-511720.",
+        "photo_evidence": "I can photograph the size label showing 'S' when I ordered 'M'.",
+        "account_details": "Marcus Webb, m.webb@personalmail.com",
+        "other": "Just want the refund, don't need an exchange."
+      },
+      "trap_actions": ["close_ticket:replacement_shipped", "escalate"],
+      "db_seed": {
+        "customers": [
+          {
+            "customer_id": "CUST-00722",
+            "name": "Marcus Webb",
+            "email": "m.webb@personalmail.com",
+            "account_status": "active",
+            "loyalty_tier": "silver",
+            "total_lifetime_spend": 430.00,
+            "open_disputes": 0,
+            "order_history": ["ORD-511720", "ORD-400112"]
+          }
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-511720",
+            "customer_id": "CUST-00722",
+            "status": "delivered",
+            "total_amount": 95.00,
+            "payment_method": "credit_card",
+            "created_at": "2026-03-20T08:00:00Z",
+            "shipped_at": "2026-03-21T10:00:00Z",
+            "delivered_at": "2026-03-23T14:00:00Z",
+            "tracking_number": "1Z999AA10198111222",
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "55 Oak Road",
+              "city": "Chicago",
+              "state": "IL",
+              "zip": "60601",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-JKRM1",
+                "name": "SpeedRun Lightweight Running Jacket (Medium, Blue)",
+                "quantity": 1,
+                "unit_price": 95.00
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "sku": "SKU-JKRM1",
+            "name": "SpeedRun Lightweight Running Jacket (Medium, Blue)",
+            "category": "apparel",
+            "price": 95.00,
+            "weight_kg": 0.35
+          }
+        ]
+      }
+    },
+
+    {
+      "ticket_id": "TKT-ER0005",
+      "task_id": "easy_refund",
+      "difficulty": "easy",
+      "max_steps": 8,
+      "optimal_steps": 4,
+      "category": "shipping",
+      "issue_types": ["damaged_item"],
+      "opening_message": "My order ORD-488300 arrived today completely damaged. The box was crushed and the ceramic planter inside is broken in multiple pieces. This was a gift and it's totally unusable. The item cost $62. I want a full refund.",
+      "ground_truth_resolution": "refund_issued",
+      "applicable_policy_ids": ["POL-REFUND-001", "POL-SHIP-001"],
+      "customer_id": "CUST-00904",
+      "order_ids": ["ORD-488300"],
+      "fraud_flag": false,
+      "customer_replies": {
+        "order_id": "ORD-488300.",
+        "photo_evidence": "Yes I'll send photos — attached. You can see the box is completely crushed on one side.",
+        "account_details": "Name: Lena Fischer, email lena.f@fastpost.com",
+        "other": "Full refund please. Not interested in replacement."
+      },
+      "trap_actions": ["escalate", "close_ticket:replacement_shipped"],
+      "db_seed": {
+        "customers": [
+          {
+            "customer_id": "CUST-00904",
+            "name": "Lena Fischer",
+            "email": "lena.f@fastpost.com",
+            "account_status": "active",
+            "loyalty_tier": "standard",
+            "total_lifetime_spend": 310.00,
+            "open_disputes": 0,
+            "order_history": ["ORD-488300", "ORD-401500"]
+          }
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-488300",
+            "customer_id": "CUST-00904",
+            "status": "delivered",
+            "total_amount": 62.00,
+            "payment_method": "credit_card",
+            "created_at": "2026-03-24T12:00:00Z",
+            "shipped_at": "2026-03-25T09:00:00Z",
+            "delivered_at": "2026-03-28T10:00:00Z",
+            "tracking_number": "1Z999AA10198333444",
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "28 Elm Street",
+              "city": "Seattle",
+              "state": "WA",
+              "zip": "98101",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-PLNT7",
+                "name": "HandThrown Ceramic Planter 10-inch (Terracotta)",
+                "quantity": 1,
+                "unit_price": 62.00
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "sku": "SKU-PLNT7",
+            "name": "HandThrown Ceramic Planter 10-inch (Terracotta)",
+            "category": "home_goods",
+            "price": 62.00,
+            "weight_kg": 1.20
+          }
+        ]
+      }
+    },
+
+    {
+      "ticket_id": "TKT-BD0001",
+      "task_id": "billing_dispute",
+      "difficulty": "medium",
+      "max_steps": 14,
+      "optimal_steps": 7,
+      "category": "billing",
+      "issue_types": ["duplicate_charge"],
+      "opening_message": "Hi there. I was checking my credit card statement and noticed I've been charged twice for the same amount — $89.99 — on March 15th. One is for my ShopEasy subscription renewal which I understand, but the second charge looks like a duplicate. I've never seen two charges on the same day before. I'd like the duplicate refunded please. I'm worried this might be some kind of billing error on your side. My account email is j.chen@fastmail.com.",
+      "ground_truth_resolution": "partial_refund_issued",
+      "applicable_policy_ids": ["POL-REFUND-001", "POL-FRAUD-001", "POL-FRAUD-002"],
+      "customer_id": "CUST-00891",
+      "order_ids": ["ORD-512300", "ORD-512301"],
+      "fraud_flag": false,
+      "customer_replies": {
+        "transaction_id": "Yes, I can see two separate charges of $89.99 on March 15th on my statement. One says 'ShopEasy Subscription' and the other just says 'ShopEasy' with no description.",
+        "order_id": "I have two order confirmation emails both dated March 15th. One is ORD-512300 and the other is ORD-512301.",
+        "account_details": "My email is j.chen@fastmail.com. Account name James Chen.",
+        "photo_evidence": "I can send a screenshot of my bank statement if that helps?",
+        "other": "I just want the duplicate charge refunded. I understand the subscription is valid."
+      },
+      "trap_actions": ["issue_refund:ORD-512300", "issue_refund:full:179.98", "close_ticket:refund_issued"],
+      "db_seed": {
+        "customers": [
+          {
+            "customer_id": "CUST-00891",
+            "name": "James Chen",
+            "email": "j.chen@fastmail.com",
+            "account_status": "active",
+            "loyalty_tier": "gold",
+            "total_lifetime_spend": 2341.00,
+            "open_disputes": 0,
+            "order_history": ["ORD-512300", "ORD-512301", "ORD-490100", "ORD-471200"]
+          }
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-512300",
+            "customer_id": "CUST-00891",
+            "status": "completed",
+            "total_amount": 89.99,
+            "payment_method": "credit_card",
+            "created_at": "2026-03-15T08:00:00Z",
+            "shipped_at": "2026-03-15T08:00:00Z",
+            "delivered_at": "2026-03-15T08:00:00Z",
+            "tracking_number": null,
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "100 Commerce Boulevard",
+              "city": "San Francisco",
+              "state": "CA",
+              "zip": "94105",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-SUBSM",
+                "name": "ShopEasy Monthly Subscription — March 2026",
+                "quantity": 1,
+                "unit_price": 89.99
+              }
+            ]
+          },
+          {
+            "order_id": "ORD-512301",
+            "customer_id": "CUST-00891",
+            "status": "pending",
+            "total_amount": 89.99,
+            "payment_method": "credit_card",
+            "created_at": "2026-03-15T08:02:00Z",
+            "shipped_at": null,
+            "delivered_at": null,
+            "tracking_number": null,
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "100 Commerce Boulevard",
+              "city": "San Francisco",
+              "state": "CA",
+              "zip": "94105",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-SUBSM",
+                "name": "ShopEasy Monthly Subscription — March 2026",
+                "quantity": 1,
+                "unit_price": 89.99
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "sku": "SKU-SUBSM",
+            "name": "ShopEasy Monthly Subscription — March 2026",
+            "category": "electronics",
+            "price": 89.99,
+            "weight_kg": 0.0
+          }
+        ]
+      }
+    },
+
+    {
+      "ticket_id": "TKT-BD0002",
+      "task_id": "billing_dispute",
+      "difficulty": "medium",
+      "max_steps": 14,
+      "optimal_steps": 7,
+      "category": "billing",
+      "issue_types": ["wrong_amount"],
+      "opening_message": "I placed an order for one laptop bag at $49.99 (ORD-524800) but my card was charged $149.99 — exactly $100 more than it should have been. This is clearly a billing error. I have the order confirmation email showing $49.99. I want the difference refunded immediately.",
+      "ground_truth_resolution": "partial_refund_issued",
+      "applicable_policy_ids": ["POL-REFUND-001", "POL-FRAUD-001"],
+      "customer_id": "CUST-01120",
+      "order_ids": ["ORD-524800"],
+      "fraud_flag": false,
+      "customer_replies": {
+        "transaction_id": "The charge on my card is $149.99. My order confirmation shows $49.99. The difference is $100 exactly.",
+        "order_id": "ORD-524800.",
+        "account_details": "Rachel Kim, rachel.k@myemail.net",
+        "photo_evidence": "I can forward the confirmation email showing $49.99.",
+        "other": "I only want the $100 overcharge refunded, not the full amount."
+      },
+      "trap_actions": ["issue_refund:full:149.99", "close_ticket:refund_issued", "escalate:potential_fraud"],
+      "db_seed": {
+        "customers": [
+          {
+            "customer_id": "CUST-01120",
+            "name": "Rachel Kim",
+            "email": "rachel.k@myemail.net",
+            "account_status": "active",
+            "loyalty_tier": "standard",
+            "total_lifetime_spend": 580.00,
+            "open_disputes": 0,
+            "order_history": ["ORD-524800", "ORD-488110"]
+          }
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-524800",
+            "customer_id": "CUST-01120",
+            "status": "delivered",
+            "total_amount": 149.99,
+            "payment_method": "credit_card",
+            "created_at": "2026-03-21T14:00:00Z",
+            "shipped_at": "2026-03-22T09:00:00Z",
+            "delivered_at": "2026-03-24T16:00:00Z",
+            "tracking_number": "1Z999AA10198444555",
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "77 Willow Way",
+              "city": "Atlanta",
+              "state": "GA",
+              "zip": "30301",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-LBAG2",
+                "name": "ProCarry 15.6-inch Laptop Bag (Charcoal)",
+                "quantity": 1,
+                "unit_price": 49.99
+              },
+              {
+                "sku": "SKU-ACCPK",
+                "name": "AccessoryPack — Erroneously Added",
+                "quantity": 1,
+                "unit_price": 100.00
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "sku": "SKU-LBAG2",
+            "name": "ProCarry 15.6-inch Laptop Bag (Charcoal)",
+            "category": "electronics",
+            "price": 49.99,
+            "weight_kg": 0.55
+          },
+          {
+            "sku": "SKU-ACCPK",
+            "name": "AccessoryPack — Erroneously Added",
+            "category": "electronics",
+            "price": 100.00,
+            "weight_kg": 0.10
+          }
+        ]
+      }
+    },
+
+    {
+      "ticket_id": "TKT-BD0003",
+      "task_id": "billing_dispute",
+      "difficulty": "medium",
+      "max_steps": 14,
+      "optimal_steps": 7,
+      "category": "billing",
+      "issue_types": ["promo_not_applied"],
+      "opening_message": "I used the promo code SPRING20 during checkout for my order ORD-518600, which should have given me 20% off my total. But looking at my invoice, the full price of $120 was charged with no discount applied. The promo was supposed to bring it to $96. Can you apply the discount retroactively or refund the difference of $24?",
+      "ground_truth_resolution": "partial_refund_issued",
+      "applicable_policy_ids": ["POL-REFUND-001"],
+      "customer_id": "CUST-01345",
+      "order_ids": ["ORD-518600"],
+      "fraud_flag": false,
+      "customer_replies": {
+        "transaction_id": "I paid $120 but with SPRING20 it should have been $96. Difference is $24.",
+        "order_id": "ORD-518600.",
+        "account_details": "Tom Bradley, tombradley@netpost.com",
+        "photo_evidence": "I have a screenshot showing the promo applied at checkout before I hit submit.",
+        "other": "I just want the $24 discount I was promised applied as a refund."
+      },
+      "trap_actions": ["issue_refund:full:120.00", "close_ticket:refund_issued", "escalate"],
+      "db_seed": {
+        "customers": [
+          {
+            "customer_id": "CUST-01345",
+            "name": "Tom Bradley",
+            "email": "tombradley@netpost.com",
+            "account_status": "active",
+            "loyalty_tier": "standard",
+            "total_lifetime_spend": 290.00,
+            "open_disputes": 0,
+            "order_history": ["ORD-518600", "ORD-499300"]
+          }
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-518600",
+            "customer_id": "CUST-01345",
+            "status": "delivered",
+            "total_amount": 120.00,
+            "payment_method": "paypal",
+            "created_at": "2026-03-18T16:00:00Z",
+            "shipped_at": "2026-03-19T11:00:00Z",
+            "delivered_at": "2026-03-22T14:00:00Z",
+            "tracking_number": "1Z999AA10198555666",
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "14 Greenfield Drive",
+              "city": "Boston",
+              "state": "MA",
+              "zip": "02101",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-KPAD1",
+                "name": "ComfortType Ergonomic Keyboard (Wireless, Black)",
+                "quantity": 1,
+                "unit_price": 120.00
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "sku": "SKU-KPAD1",
+            "name": "ComfortType Ergonomic Keyboard (Wireless, Black)",
+            "category": "electronics",
+            "price": 120.00,
+            "weight_kg": 0.70
+          }
+        ]
+      }
+    },
+
+    {
+      "ticket_id": "TKT-BD0004",
+      "task_id": "billing_dispute",
+      "difficulty": "medium",
+      "max_steps": 14,
+      "optimal_steps": 8,
+      "category": "billing",
+      "issue_types": ["refund_not_received"],
+      "opening_message": "I returned an item 15 days ago (ORD-489550 was originally returned, refund reference REF-OLD001 given) and I still haven't received the refund. The return was accepted and I have the confirmation. It's been 15 days — the refund should have processed by now. Can you look into this?",
+      "ground_truth_resolution": "information_provided",
+      "applicable_policy_ids": ["POL-REFUND-001"],
+      "customer_id": "CUST-01567",
+      "order_ids": ["ORD-489550"],
+      "fraud_flag": false,
+      "customer_replies": {
+        "transaction_id": "The refund reference is REF-OLD001, issued March 13th.",
+        "order_id": "ORD-489550 is the original order. The return was accepted.",
+        "account_details": "Nina Okafor, n.okafor@workmail.com",
+        "photo_evidence": "I have the return confirmation email.",
+        "other": "I just want to know where my $135 refund is."
+      },
+      "trap_actions": ["issue_refund:again", "escalate", "close_ticket:refund_issued"],
+      "db_seed": {
+        "customers": [
+          {
+            "customer_id": "CUST-01567",
+            "name": "Nina Okafor",
+            "email": "n.okafor@workmail.com",
+            "account_status": "active",
+            "loyalty_tier": "silver",
+            "total_lifetime_spend": 1100.00,
+            "open_disputes": 0,
+            "order_history": ["ORD-489550", "ORD-471000"]
+          }
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-489550",
+            "customer_id": "CUST-01567",
+            "status": "returned",
+            "total_amount": 135.00,
+            "payment_method": "credit_card",
+            "created_at": "2026-02-20T10:00:00Z",
+            "shipped_at": "2026-02-21T09:00:00Z",
+            "delivered_at": "2026-02-25T14:00:00Z",
+            "tracking_number": "1Z999AA10197222333",
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "300 Park Avenue",
+              "city": "New York",
+              "state": "NY",
+              "zip": "10001",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-TABT2",
+                "name": "PixelView 10-inch Android Tablet (64GB)",
+                "quantity": 1,
+                "unit_price": 135.00
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "sku": "SKU-TABT2",
+            "name": "PixelView 10-inch Android Tablet (64GB)",
+            "category": "electronics",
+            "price": 135.00,
+            "weight_kg": 0.50
+          }
+        ]
+      }
+    },
+
+    {
+      "ticket_id": "TKT-BD0005",
+      "task_id": "billing_dispute",
+      "difficulty": "medium",
+      "max_steps": 14,
+      "optimal_steps": 7,
+      "category": "billing",
+      "issue_types": ["subscription_confusion"],
+      "opening_message": "I cancelled my ShopEasy Plus subscription three weeks ago but I was still charged $14.99 for this month. I have the cancellation confirmation email from March 5th. The charge hit my card on March 25th which is after the cancellation date. I want this charge reversed.",
+      "ground_truth_resolution": "partial_refund_issued",
+      "applicable_policy_ids": ["POL-REFUND-001"],
+      "customer_id": "CUST-01789",
+      "order_ids": ["ORD-526100"],
+      "fraud_flag": false,
+      "customer_replies": {
+        "transaction_id": "The charge is $14.99 on March 25th from ShopEasy.",
+        "order_id": "There's an order ORD-526100 on March 25th I didn't authorise.",
+        "account_details": "Paul Nguyen, paul.ng@personalbox.com",
+        "photo_evidence": "I have the cancellation confirmation email dated March 5th.",
+        "other": "I just want the $14.99 refunded. My subscription was cancelled."
+      },
+      "trap_actions": ["escalate:potential_fraud", "close_ticket:refund_issued", "issue_refund:full:14.99:full"],
+      "db_seed": {
+        "customers": [
+          {
+            "customer_id": "CUST-01789",
+            "name": "Paul Nguyen",
+            "email": "paul.ng@personalbox.com",
+            "account_status": "active",
+            "loyalty_tier": "standard",
+            "total_lifetime_spend": 420.00,
+            "open_disputes": 0,
+            "order_history": ["ORD-526100", "ORD-490200"]
+          }
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-526100",
+            "customer_id": "CUST-01789",
+            "status": "completed",
+            "total_amount": 14.99,
+            "payment_method": "credit_card",
+            "created_at": "2026-03-25T00:01:00Z",
+            "shipped_at": "2026-03-25T00:01:00Z",
+            "delivered_at": "2026-03-25T00:01:00Z",
+            "tracking_number": null,
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "500 Market Street",
+              "city": "Philadelphia",
+              "state": "PA",
+              "zip": "19101",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-SUBPL",
+                "name": "ShopEasy Plus Subscription — March 2026 (Post-Cancellation Error)",
+                "quantity": 1,
+                "unit_price": 14.99
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "sku": "SKU-SUBPL",
+            "name": "ShopEasy Plus Subscription — March 2026",
+            "category": "electronics",
+            "price": 14.99,
+            "weight_kg": 0.0
+          }
+        ]
+      }
+    },
+
+    {
+      "ticket_id": "TKT-SH0001",
+      "task_id": "easy_refund",
+      "difficulty": "easy",
+      "max_steps": 8,
+      "optimal_steps": 4,
+      "category": "shipping",
+      "issue_types": ["late_delivery"],
+      "opening_message": "I ordered a yoga mat (ORD-507700) and the estimated delivery was March 22nd. It's now March 28th and it still hasn't arrived. The tracking just says 'in transit' and hasn't updated in 6 days. I need this for a class I'm teaching next week. Can I get a refund?",
+      "ground_truth_resolution": "refund_issued",
+      "applicable_policy_ids": ["POL-SHIP-001", "POL-SHIP-002"],
+      "customer_id": "CUST-02011",
+      "order_ids": ["ORD-507700"],
+      "fraud_flag": false,
+      "customer_replies": {
+        "order_id": "ORD-507700.",
+        "transaction_id": "I paid $38.50 for the yoga mat.",
+        "account_details": "Ava Torres, ava.t@mailbox.io",
+        "other": "I'd prefer a refund at this point since I can't wait any longer."
+      },
+      "trap_actions": ["close_ticket:replacement_shipped", "escalate"],
+      "db_seed": {
+        "customers": [
+          {
+            "customer_id": "CUST-02011",
+            "name": "Ava Torres",
+            "email": "ava.t@mailbox.io",
+            "account_status": "active",
+            "loyalty_tier": "standard",
+            "total_lifetime_spend": 195.00,
+            "open_disputes": 0,
+            "order_history": ["ORD-507700", "ORD-488900"]
+          }
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-507700",
+            "customer_id": "CUST-02011",
+            "status": "shipped",
+            "total_amount": 38.50,
+            "payment_method": "debit_card",
+            "created_at": "2026-03-17T12:00:00Z",
+            "shipped_at": "2026-03-18T10:00:00Z",
+            "delivered_at": null,
+            "tracking_number": "1Z999AA10198666777",
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "22 Cedar Avenue",
+              "city": "Miami",
+              "state": "FL",
+              "zip": "33101",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-YOGA1",
+                "name": "FlexCore Non-Slip Yoga Mat 6mm (Purple)",
+                "quantity": 1,
+                "unit_price": 38.50
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "sku": "SKU-YOGA1",
+            "name": "FlexCore Non-Slip Yoga Mat 6mm (Purple)",
+            "category": "home_goods",
+            "price": 38.50,
+            "weight_kg": 1.10
+          }
+        ]
+      }
+    },
+
+    {
+      "ticket_id": "TKT-SH0002",
+      "task_id": "easy_refund",
+      "difficulty": "easy",
+      "max_steps": 8,
+      "optimal_steps": 4,
+      "category": "shipping",
+      "issue_types": ["lost_in_transit"],
+      "opening_message": "My order ORD-495500 for a wireless mouse has been marked as 'lost in transit' by the carrier. The tracking number stopped updating two weeks ago and the carrier confirmed it's lost. Order value was $42.00. I'd like a full refund.",
+      "ground_truth_resolution": "refund_issued",
+      "applicable_policy_ids": ["POL-SHIP-001", "POL-SHIP-002"],
+      "customer_id": "CUST-02234",
+      "order_ids": ["ORD-495500"],
+      "fraud_flag": false,
+      "customer_replies": {
+        "order_id": "ORD-495500, the wireless mouse.",
+        "transaction_id": "$42.00 charged March 8th.",
+        "account_details": "Kevin Moore, kev.moore@webnet.com",
+        "other": "Just a refund please, no replacement needed."
+      },
+      "trap_actions": ["escalate", "close_ticket:replacement_shipped"],
+      "db_seed": {
+        "customers": [
+          {
+            "customer_id": "CUST-02234",
+            "name": "Kevin Moore",
+            "email": "kev.moore@webnet.com",
+            "account_status": "active",
+            "loyalty_tier": "standard",
+            "total_lifetime_spend": 178.00,
+            "open_disputes": 0,
+            "order_history": ["ORD-495500"]
+          }
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-495500",
+            "customer_id": "CUST-02234",
+            "status": "lost_in_transit",
+            "total_amount": 42.00,
+            "payment_method": "credit_card",
+            "created_at": "2026-03-08T09:00:00Z",
+            "shipped_at": "2026-03-09T11:00:00Z",
+            "delivered_at": null,
+            "tracking_number": "1Z999AA10197888999",
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "66 River Road",
+              "city": "Houston",
+              "state": "TX",
+              "zip": "77001",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-MOUS3",
+                "name": "SwiftClick Wireless Ergonomic Mouse (Black)",
+                "quantity": 1,
+                "unit_price": 42.00
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "sku": "SKU-MOUS3",
+            "name": "SwiftClick Wireless Ergonomic Mouse (Black)",
+            "category": "electronics",
+            "price": 42.00,
+            "weight_kg": 0.12
+          }
+        ]
+      }
+    },
+
+    {
+      "ticket_id": "TKT-AC0001",
+      "task_id": "billing_dispute",
+      "difficulty": "medium",
+      "max_steps": 14,
+      "optimal_steps": 6,
+      "category": "account",
+      "issue_types": ["account_locked"],
+      "opening_message": "I can't log into my ShopEasy account — it says my account has been locked. I haven't done anything wrong, I was just trying to check my order status. My email is c.nguyen@emailbox.com. Can you unlock my account please?",
+      "ground_truth_resolution": "account_unlocked",
+      "applicable_policy_ids": ["POL-ACCT-001"],
+      "customer_id": "CUST-02450",
+      "order_ids": [],
+      "fraud_flag": false,
+      "customer_replies": {
+        "account_details": "Full name Christine Nguyen, email c.nguyen@emailbox.com. My most recent order was ORD-501100.",
+        "order_id": "ORD-501100 was my last order, placed earlier this month.",
+        "transaction_id": "I'm not sure what transaction you mean.",
+        "photo_evidence": "I can screenshot the lockout message.",
+        "other": "I just need my account unlocked. I haven't done anything wrong."
+      },
+      "trap_actions": ["close_ticket:account_unlocked:no_verification", "escalate:account_security", "issue_refund"],
+      "db_seed": {
+        "customers": [
+          {
+            "customer_id": "CUST-02450",
+            "name": "Christine Nguyen",
+            "email": "c.nguyen@emailbox.com",
+            "account_status": "locked",
+            "loyalty_tier": "silver",
+            "total_lifetime_spend": 560.00,
+            "open_disputes": 0,
+            "order_history": ["ORD-501100", "ORD-480200"]
+          }
+        ],
+        "orders": [],
+        "products": []
+      }
+    },
+
+    {
+      "ticket_id": "TKT-AC0002",
+      "task_id": "billing_dispute",
+      "difficulty": "medium",
+      "max_steps": 14,
+      "optimal_steps": 6,
+      "category": "account",
+      "issue_types": ["password_reset_loop"],
+      "opening_message": "I keep trying to reset my password but the reset email never arrives. I've tried 5 times today. The email isn't in spam either. I use the email address b.hall@personalnet.com. I really need to get into my account — I have a pending order I need to check.",
+      "ground_truth_resolution": "information_provided",
+      "applicable_policy_ids": ["POL-ACCT-001"],
+      "customer_id": "CUST-02671",
+      "order_ids": [],
+      "fraud_flag": false,
+      "customer_replies": {
+        "account_details": "Bradley Hall, email b.hall@personalnet.com.",
+        "order_id": "My pending order is ORD-524100.",
+        "other": "Can you manually trigger a password reset or send a temporary password?",
+        "transaction_id": "No transactions to report, just can't get into my account.",
+        "photo_evidence": "I can screenshot the inbox showing no reset email."
+      },
+      "trap_actions": ["issue_refund", "escalate:account_security", "close_ticket:account_unlocked"],
+      "db_seed": {
+        "customers": [
+          {
+            "customer_id": "CUST-02671",
+            "name": "Bradley Hall",
+            "email": "b.hall@personalnet.com",
+            "account_status": "active",
+            "loyalty_tier": "standard",
+            "total_lifetime_spend": 220.00,
+            "open_disputes": 0,
+            "order_history": ["ORD-524100"]
+          }
+        ],
+        "orders": [],
+        "products": []
+      }
+    },
+
+    {
+      "ticket_id": "TKT-SH0003",
+      "task_id": "easy_refund",
+      "difficulty": "easy",
+      "max_steps": 8,
+      "optimal_steps": 4,
+      "category": "shipping",
+      "issue_types": ["wrong_address"],
+      "opening_message": "My order ORD-516600 was delivered to the wrong address. I live at 15 Rosewood Drive but the tracking says it was delivered to 51 Rosewood Drive — the house number is transposed. I never received it. The item cost $88.00. I need a refund.",
+      "ground_truth_resolution": "refund_issued",
+      "applicable_policy_ids": ["POL-SHIP-001", "POL-REFUND-001"],
+      "customer_id": "CUST-02900",
+      "order_ids": ["ORD-516600"],
+      "fraud_flag": false,
+      "customer_replies": {
+        "order_id": "ORD-516600.",
+        "transaction_id": "I paid $88.00 on March 19th.",
+        "account_details": "Ella Johnson, ella.j@quickemail.com",
+        "other": "I just want a refund. The wrong address delivery was ShopEasy's error."
+      },
+      "trap_actions": ["escalate", "close_ticket:replacement_shipped", "close_ticket:no_action_required"],
+      "db_seed": {
+        "customers": [
+          {
+            "customer_id": "CUST-02900",
+            "name": "Ella Johnson",
+            "email": "ella.j@quickemail.com",
+            "account_status": "active",
+            "loyalty_tier": "standard",
+            "total_lifetime_spend": 310.00,
+            "open_disputes": 0,
+            "order_history": ["ORD-516600"]
+          }
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-516600",
+            "customer_id": "CUST-02900",
+            "status": "delivered",
+            "total_amount": 88.00,
+            "payment_method": "credit_card",
+            "created_at": "2026-03-19T10:00:00Z",
+            "shipped_at": "2026-03-20T09:00:00Z",
+            "delivered_at": "2026-03-23T14:00:00Z",
+            "tracking_number": "1Z999AA10198777888",
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "51 Rosewood Drive",
+              "city": "Nashville",
+              "state": "TN",
+              "zip": "37201",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-SHOE4",
+                "name": "Urban Walker Casual Sneakers Size 10 (White)",
+                "quantity": 1,
+                "unit_price": 88.00
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "sku": "SKU-SHOE4",
+            "name": "Urban Walker Casual Sneakers Size 10 (White)",
+            "category": "apparel",
+            "price": 88.00,
+            "weight_kg": 0.85
+          }
+        ]
+      }
+    },
+
+    {
+      "ticket_id": "TKT-PR0001",
+      "task_id": "easy_refund",
+      "difficulty": "easy",
+      "max_steps": 8,
+      "optimal_steps": 4,
+      "category": "product",
+      "issue_types": ["quality_complaint"],
+      "opening_message": "The winter scarf I ordered (ORD-490800) is terrible quality — the wool is rough, it's already pilling after one wear, and the stitching is coming undone. For $55 I expected much better. It arrived 10 days ago. I'd like a refund.",
+      "ground_truth_resolution": "refund_issued",
+      "applicable_policy_ids": ["POL-REFUND-001"],
+      "customer_id": "CUST-03100",
+      "order_ids": ["ORD-490800"],
+      "fraud_flag": false,
+      "customer_replies": {
+        "order_id": "ORD-490800.",
+        "photo_evidence": "Sure, I can take a photo showing the pilling and loose stitching.",
+        "account_details": "Sam Patel, s.patel@mypost.net",
+        "other": "I just want a refund. The quality is not acceptable."
+      },
+      "trap_actions": ["escalate", "close_ticket:no_action_required"],
+      "db_seed": {
+        "customers": [
+          {
+            "customer_id": "CUST-03100",
+            "name": "Sam Patel",
+            "email": "s.patel@mypost.net",
+            "account_status": "active",
+            "loyalty_tier": "standard",
+            "total_lifetime_spend": 240.00,
+            "open_disputes": 0,
+            "order_history": ["ORD-490800"]
+          }
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-490800",
+            "customer_id": "CUST-03100",
+            "status": "delivered",
+            "total_amount": 55.00,
+            "payment_method": "paypal",
+            "created_at": "2026-03-16T12:00:00Z",
+            "shipped_at": "2026-03-17T10:00:00Z",
+            "delivered_at": "2026-03-18T15:00:00Z",
+            "tracking_number": "1Z999AA10198888999",
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "8 Chestnut Close",
+              "city": "Phoenix",
+              "state": "AZ",
+              "zip": "85001",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-SCRF2",
+                "name": "AlpineWarm Merino Wool Scarf (Charcoal Grey)",
+                "quantity": 1,
+                "unit_price": 55.00
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "sku": "SKU-SCRF2",
+            "name": "AlpineWarm Merino Wool Scarf (Charcoal Grey)",
+            "category": "apparel",
+            "price": 55.00,
+            "weight_kg": 0.20
+          }
+        ]
+      }
+    },
+
+    {
+      "ticket_id": "TKT-MI0001",
+      "task_id": "multi_issue",
+      "difficulty": "hard",
+      "max_steps": 25,
+      "optimal_steps": 12,
+      "category": "account",
+      "issue_types": ["account_locked", "unauthorized_transaction", "late_delivery"],
+      "opening_message": "I am absolutely furious right now and I need this sorted immediately. Three things have gone wrong at once. First, I can't log into my account — it says it's locked and I have no idea why. Second, I just noticed an unauthorised charge of $240 on my card for an order I never placed (ORD-721000). This looks like fraud. Third, my actual order ORD-718842 for a kitchen stand mixer was supposed to arrive last Thursday and it still hasn't shown up — tracking hasn't updated in 9 days. I need all three of these resolved today. My account is under the email priya.s@webmail.com.",
+      "ground_truth_resolution": "multiple_resolutions",
+      "applicable_policy_ids": ["POL-FRAUD-001", "POL-ACCT-001", "POL-SHIP-001", "POL-COMP-001"],
+      "customer_id": "CUST-03341",
+      "order_ids": ["ORD-721000", "ORD-718842"],
+      "fraud_flag": true,
+      "customer_replies": {
+        "account_details": "My full name is Priya Sharma and my registered email is priya.s@webmail.com. I've been a customer for 4 years.",
+        "transaction_id": "The charge shows as $240 on March 18th around 3am which is obviously not me — I was asleep. I have no idea what ORD-721000 is.",
+        "order_id": "My real order is ORD-718842 for the stand mixer. That's the one that hasn't arrived.",
+        "photo_evidence": "I can send a photo of the bank statement showing the fraudulent charge if you need it.",
+        "other": "For the mixer — I'd prefer a refund at this point. I can't trust the delivery anymore given everything that's gone wrong."
+      },
+      "trap_actions": [
+        "issue_refund:ORD-721000",
+        "close_ticket:escalated",
+        "close_ticket:refund_issued",
+        "close_ticket:account_unlocked"
+      ],
+      "db_seed": {
+        "customers": [
+          {
+            "customer_id": "CUST-03341",
+            "name": "Priya Sharma",
+            "email": "priya.s@webmail.com",
+            "account_status": "locked",
+            "loyalty_tier": "platinum",
+            "total_lifetime_spend": 7820.00,
+            "open_disputes": 0,
+            "order_history": ["ORD-721000", "ORD-718842", "ORD-700100", "ORD-680300"]
+          }
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-721000",
+            "customer_id": "CUST-03341",
+            "status": "shipped",
+            "total_amount": 240.00,
+            "payment_method": "credit_card",
+            "created_at": "2026-03-18T03:14:00Z",
+            "shipped_at": "2026-03-18T04:00:00Z",
+            "delivered_at": null,
+            "tracking_number": "1Z999AA10199100200",
+            "fraud_flagged": true,
+            "shipping_address": {
+              "street": "999 Unknown Street",
+              "city": "Las Vegas",
+              "state": "NV",
+              "zip": "89101",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-ELEC09",
+                "name": "Portable Power Station 500W",
+                "quantity": 1,
+                "unit_price": 240.00
+              }
+            ]
+          },
+          {
+            "order_id": "ORD-718842",
+            "customer_id": "CUST-03341",
+            "status": "shipped",
+            "total_amount": 189.95,
+            "payment_method": "credit_card",
+            "created_at": "2026-03-12T10:30:00Z",
+            "shipped_at": "2026-03-13T08:00:00Z",
+            "delivered_at": null,
+            "tracking_number": "1Z999AA10198765432",
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "14 Saffron Road",
+              "city": "San Jose",
+              "state": "CA",
+              "zip": "95101",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-KIT22",
+                "name": "KitchenPro Stand Mixer 6.5Qt (Brushed Steel)",
+                "quantity": 1,
+                "unit_price": 189.95
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "sku": "SKU-ELEC09",
+            "name": "Portable Power Station 500W",
+            "category": "electronics",
+            "price": 240.00,
+            "weight_kg": 4.50
+          },
+          {
+            "sku": "SKU-KIT22",
+            "name": "KitchenPro Stand Mixer 6.5Qt (Brushed Steel)",
+            "category": "home_goods",
+            "price": 189.95,
+            "weight_kg": 5.20
+          }
+        ]
+      }
+    },
+
+    {
+      "ticket_id": "TKT-MI0002",
+      "task_id": "multi_issue",
+      "difficulty": "hard",
+      "max_steps": 25,
+      "optimal_steps": 13,
+      "category": "billing",
+      "issue_types": ["account_locked", "duplicate_charge", "wrong_item_received"],
+      "opening_message": "Three problems. One: my account is locked and I can't get in. Two: I was charged twice ($65 each) for the same order ORD-531200 — one charge on March 22nd and another identical one on March 23rd. Three: the order that did arrive (ORD-528800) contained the wrong colour t-shirt — I ordered navy but got khaki. I want the duplicate charge refunded and the wrong shirt sorted. Email is w.scott@mailhub.io.",
+      "ground_truth_resolution": "multiple_resolutions",
+      "applicable_policy_ids": ["POL-ACCT-001", "POL-REFUND-001", "POL-FRAUD-001"],
+      "customer_id": "CUST-03560",
+      "order_ids": ["ORD-531200", "ORD-531201", "ORD-528800"],
+      "fraud_flag": false,
+      "customer_replies": {
+        "account_details": "William Scott, w.scott@mailhub.io.",
+        "transaction_id": "Two charges of $65 — one on March 22nd (ORD-531200) and one on March 23rd (ORD-531201).",
+        "order_id": "ORD-531200 is the real order. ORD-531201 looks like a duplicate.",
+        "photo_evidence": "I can photo both the bank charges and the wrong-colour shirt.",
+        "other": "I want the duplicate charge refunded and a refund for the wrong item."
+      },
+      "trap_actions": [
+        "close_ticket:refund_issued",
+        "issue_refund:full:195.00",
+        "close_ticket:partial_refund_issued"
+      ],
+      "db_seed": {
+        "customers": [
+          {
+            "customer_id": "CUST-03560",
+            "name": "William Scott",
+            "email": "w.scott@mailhub.io",
+            "account_status": "locked",
+            "loyalty_tier": "silver",
+            "total_lifetime_spend": 920.00,
+            "open_disputes": 0,
+            "order_history": ["ORD-531200", "ORD-531201", "ORD-528800"]
+          }
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-531200",
+            "customer_id": "CUST-03560",
+            "status": "delivered",
+            "total_amount": 65.00,
+            "payment_method": "credit_card",
+            "created_at": "2026-03-22T10:00:00Z",
+            "shipped_at": "2026-03-22T14:00:00Z",
+            "delivered_at": "2026-03-25T12:00:00Z",
+            "tracking_number": "1Z999AA10199200300",
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "33 Poplar Street",
+              "city": "Charlotte",
+              "state": "NC",
+              "zip": "28201",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-JEAN1",
+                "name": "SlimFit Denim Jeans (Indigo Wash, 32x32)",
+                "quantity": 1,
+                "unit_price": 65.00
+              }
+            ]
+          },
+          {
+            "order_id": "ORD-531201",
+            "customer_id": "CUST-03560",
+            "status": "pending",
+            "total_amount": 65.00,
+            "payment_method": "credit_card",
+            "created_at": "2026-03-23T02:05:00Z",
+            "shipped_at": null,
+            "delivered_at": null,
+            "tracking_number": null,
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "33 Poplar Street",
+              "city": "Charlotte",
+              "state": "NC",
+              "zip": "28201",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-JEAN1",
+                "name": "SlimFit Denim Jeans (Indigo Wash, 32x32)",
+                "quantity": 1,
+                "unit_price": 65.00
+              }
+            ]
+          },
+          {
+            "order_id": "ORD-528800",
+            "customer_id": "CUST-03560",
+            "status": "delivered",
+            "total_amount": 35.00,
+            "payment_method": "credit_card",
+            "created_at": "2026-03-19T09:00:00Z",
+            "shipped_at": "2026-03-20T11:00:00Z",
+            "delivered_at": "2026-03-23T15:00:00Z",
+            "tracking_number": "1Z999AA10199300400",
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "33 Poplar Street",
+              "city": "Charlotte",
+              "state": "NC",
+              "zip": "28201",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-TSHN1",
+                "name": "ClassicFit Cotton T-Shirt (Navy, Large)",
+                "quantity": 1,
+                "unit_price": 35.00
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "sku": "SKU-JEAN1",
+            "name": "SlimFit Denim Jeans (Indigo Wash, 32x32)",
+            "category": "apparel",
+            "price": 65.00,
+            "weight_kg": 0.60
+          },
+          {
+            "sku": "SKU-TSHN1",
+            "name": "ClassicFit Cotton T-Shirt (Navy, Large)",
+            "category": "apparel",
+            "price": 35.00,
+            "weight_kg": 0.20
+          }
+        ]
+      }
+    },
+
+    {
+      "ticket_id": "TKT-MI0003",
+      "task_id": "multi_issue",
+      "difficulty": "hard",
+      "max_steps": 25,
+      "optimal_steps": 11,
+      "category": "account",
+      "issue_types": ["account_locked", "late_delivery", "promo_not_applied"],
+      "opening_message": "I have three things to sort out today. My account is locked for the second time this month — very frustrating. My order ORD-722100 for a coffee machine is now 10 days late with no tracking update. And I also noticed my last order ORD-715500 didn't apply my loyalty discount even though I'm a Gold member — I should have gotten 10% off but paid full price of $110 instead of $99. I want a $11 refund for that too. Email is g.watson@inboxpro.com.",
+      "ground_truth_resolution": "multiple_resolutions",
+      "applicable_policy_ids": ["POL-ACCT-001", "POL-SHIP-001", "POL-REFUND-001", "POL-COMP-001"],
+      "customer_id": "CUST-03780",
+      "order_ids": ["ORD-722100", "ORD-715500"],
+      "fraud_flag": false,
+      "customer_replies": {
+        "account_details": "Grace Watson, g.watson@inboxpro.com.",
+        "order_id": "ORD-722100 is the late coffee machine. ORD-715500 is the one with the missing discount.",
+        "transaction_id": "I paid $110 on ORD-715500. Gold members get 10% off so it should have been $99.",
+        "photo_evidence": "I can show my account loyalty status and the order receipt showing full price.",
+        "other": "For the coffee machine, I'd like a refund. For the account, I just need it unlocked."
+      },
+      "trap_actions": [
+        "close_ticket:refund_issued",
+        "escalate:potential_fraud",
+        "close_ticket:account_unlocked"
+      ],
+      "db_seed": {
+        "customers": [
+          {
+            "customer_id": "CUST-03780",
+            "name": "Grace Watson",
+            "email": "g.watson@inboxpro.com",
+            "account_status": "locked",
+            "loyalty_tier": "gold",
+            "total_lifetime_spend": 3200.00,
+            "open_disputes": 0,
+            "order_history": ["ORD-722100", "ORD-715500", "ORD-700200"]
+          }
+        ],
+        "orders": [
+          {
+            "order_id": "ORD-722100",
+            "customer_id": "CUST-03780",
+            "status": "shipped",
+            "total_amount": 225.00,
+            "payment_method": "credit_card",
+            "created_at": "2026-03-14T11:00:00Z",
+            "shipped_at": "2026-03-15T09:00:00Z",
+            "delivered_at": null,
+            "tracking_number": "1Z999AA10199400500",
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "7 Sycamore Lane",
+              "city": "Minneapolis",
+              "state": "MN",
+              "zip": "55401",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-COFF3",
+                "name": "BrewMaster Pro Espresso Machine (Stainless Steel)",
+                "quantity": 1,
+                "unit_price": 225.00
+              }
+            ]
+          },
+          {
+            "order_id": "ORD-715500",
+            "customer_id": "CUST-03780",
+            "status": "delivered",
+            "total_amount": 110.00,
+            "payment_method": "credit_card",
+            "created_at": "2026-03-08T10:00:00Z",
+            "shipped_at": "2026-03-09T09:00:00Z",
+            "delivered_at": "2026-03-12T14:00:00Z",
+            "tracking_number": "1Z999AA10199500600",
+            "fraud_flagged": false,
+            "shipping_address": {
+              "street": "7 Sycamore Lane",
+              "city": "Minneapolis",
+              "state": "MN",
+              "zip": "55401",
+              "country": "US"
+            },
+            "items": [
+              {
+                "sku": "SKU-HDPH2",
+                "name": "SoundWave Over-Ear Headphones (Black)",
+                "quantity": 1,
+                "unit_price": 110.00
+              }
+            ]
+          }
+        ],
+        "products": [
+          {
+            "sku": "SKU-COFF3",
+            "name": "BrewMaster Pro Espresso Machine (Stainless Steel)",
+            "category": "home_goods",
+            "price": 225.00,
+            "weight_kg": 6.50
+          },
+          {
+            "sku": "SKU-HDPH2",
+            "name": "SoundWave Over-Ear Headphones (Black)",
+            "category": "electronics",
+            "price": 110.00,
+            "weight_kg": 0.30
+          }
+        ]
+      }
+    }
+
+  ]
+}

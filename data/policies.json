@@ -1,0 +1,115 @@
+{
+  "policies": [
+    {
+      "policy_id": "POL-REFUND-001",
+      "category": "refund",
+      "rule_description": "Full refund within return window (30 days electronics/home_goods, 60 days apparel).",
+      "conditions": [
+        "Item is within the applicable return window"
+      ],
+      "required_action": null,
+      "forbidden_actions": []
+    },
+    {
+      "policy_id": "POL-REFUND-002",
+      "category": "refund",
+      "rule_description": "50% partial refund for returns between return window and 90 days.",
+      "conditions": [
+        "Item is past standard return window",
+        "Return is within 90 days of delivery"
+      ],
+      "required_action": null,
+      "forbidden_actions": []
+    },
+    {
+      "policy_id": "POL-REFUND-003",
+      "category": "refund",
+      "rule_description": "No refund after 90 days from delivery, no exceptions.",
+      "conditions": [
+        "More than 90 days from delivery"
+      ],
+      "required_action": null,
+      "forbidden_actions": [
+        "issue_refund"
+      ]
+    },
+    {
+      "policy_id": "POL-FRAUD-001",
+      "category": "fraud",
+      "rule_description": "Fraud-flagged orders MUST be escalated to fraud_investigation. Agent cannot self-resolve.",
+      "conditions": [
+        "Order is flagged for fraud"
+      ],
+      "required_action": "escalate to fraud_investigation",
+      "forbidden_actions": [
+        "issue_refund",
+        "close_ticket"
+      ]
+    },
+    {
+      "policy_id": "POL-FRAUD-002",
+      "category": "fraud",
+      "rule_description": "Refunds over $500 require manager escalation BEFORE issuing refund.",
+      "conditions": [
+        "Refund amount exceeds $500"
+      ],
+      "required_action": "escalate to manager",
+      "forbidden_actions": []
+    },
+    {
+      "policy_id": "POL-SHIP-001",
+      "category": "shipping",
+      "rule_description": "Orders 14+ days past expected delivery eligible for full refund or replacement.",
+      "conditions": [
+        "Order is 14 or more days past expected delivery"
+      ],
+      "required_action": null,
+      "forbidden_actions": []
+    },
+    {
+      "policy_id": "POL-SHIP-002",
+      "category": "shipping",
+      "rule_description": "Lost-in-transit orders must offer customer choice of refund or replacement before closing.",
+      "conditions": [
+        "Order is lost-in-transit"
+      ],
+      "required_action": null,
+      "forbidden_actions": [
+        "close_ticket"
+      ]
+    },
+    {
+      "policy_id": "POL-ACCT-001",
+      "category": "account",
+      "rule_description": "Locked accounts require request_info(info_type=account_details) for identity verification before any resolution.",
+      "conditions": [
+        "Account is locked"
+      ],
+      "required_action": "request_info",
+      "forbidden_actions": []
+    },
+    {
+      "policy_id": "POL-LEGAL-001",
+      "category": "legal",
+      "rule_description": "Messages with legal threats (lawyer, lawsuit, sue, court, attorney, legal action) must escalate to legal team immediately.",
+      "conditions": [
+        "Message contains legal threats"
+      ],
+      "required_action": "escalate to legal team",
+      "forbidden_actions": [
+        "issue_refund",
+        "send_message"
+      ]
+    },
+    {
+      "policy_id": "POL-COMP-001",
+      "category": "compensation",
+      "rule_description": "Goodwill compensation capped at $25 USD without manager approval.",
+      "conditions": [
+        "Goodwill compensation exceeds $25"
+      ],
+      "required_action": "escalate to manager",
+      "forbidden_actions": []
+    }
+  ]
+}
